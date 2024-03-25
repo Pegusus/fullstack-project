@@ -6,7 +6,7 @@ import { OTP } from '../entities/otp.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import * as OtpGenerator from 'otp-generator';
-import { NodemailerService } from 'src/email/node-emailer';
+import { NodemailerService } from '../email/node-emailer';
 
 @Injectable()
 export class OtpService {
