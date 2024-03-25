@@ -1,4 +1,4 @@
-import Role from 'src/auth/user.constants';
+import Role from '../auth/user.constants';
 import {
   Entity,
   Column,

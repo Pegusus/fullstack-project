@@ -3,7 +3,7 @@ import * as jwt from 'jsonwebtoken';
 import { Controller, Injectable, Post, Req, Res } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User } from '../entities/user.entity';
-import Role from './user.constants';
+import Role from '../auth/user.constants';
 
 @Injectable()
 @Controller('/auth')

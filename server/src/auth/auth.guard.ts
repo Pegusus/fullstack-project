@@ -8,7 +8,7 @@ import {
 import { Observable } from 'rxjs';
 import * as jwt from 'jsonwebtoken';
 import { User } from '../entities/user.entity';
-import Role from './user.constants';
+import Role from '../auth/user.constants';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
