@@ -1,0 +1,121 @@
+/* styles/Home.module.css */
+
+.container {
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .navtop {
+    display: flex;
+    inline-size: 100%;
+    justify-content: right;
+    height: 15px;
+    align-items: center;
+  }
+  .navtop-texts {
+    display: flex;
+    font-size: 10px;
+    inline-size: 200px;
+    justify-content: space-between;
+    padding-inline-end: 20px;
+    color: #333333;
+    opacity: 0.7;
+  }
+  
+  .navbar {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbarLeft a {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333333;
+  }
+  
+  .navbarCenter ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbarCenter ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .navbarCenter ul li:last-child {
+    margin-right: 0;
+  }
+  
+  .navbarCenter ul li a {
+    text-decoration: none;
+    color: #333333;
+  }
+
+  .navbarRight {
+    display: flex;
+    justify-content: space-around;
+    width: 100px;
+  }
+  
+  .navbarRight img {
+    display: flex;
+    width: 100px;
+    margin-inline-start: 20px;
+    cursor: pointer;
+  }
+
+  .carousel {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #F4F4F4;
+    block-size: 40px;
+    z-index: -1;
+  }
+
+  .carouselSlider {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    height: 100vh;
+  }
+  
+  .footer {
+    inline-size: 100%;
+    block-size: 100px;
+    border-block-start: 1px solid #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .customPrevArrow {
+    display: flex;
+    align-items: center;
+  }
+  
+  .customNextArrow {
+    display: flex;
+    align-items: center;
+  }
+  

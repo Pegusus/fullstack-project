@@ -1,0 +1,114 @@
+/* ./src/styles/login.module.css */
+.login-container {
+    justify-content: center;
+    align-items: center;
+    block-size: 100vh;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    inline-size: 360px;
+    block-size: 450px;
+    padding: 15px;
+    padding-block-start: 30px;
+    border: 1px solid #C1C1C1;
+    border-radius: 20px;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .login-header-container {
+    display: flex;
+    inline-size: 315px;
+    margin-block-end: 20px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .login-header-text {
+    display: flex;
+    font-size: 25px;
+    margin-block-end: 10px;
+  }
+
+  .login-header-text-1 {
+    display: flex;
+    font-size: 16px;
+    margin-block-end: 10px;
+  }
+
+  .login-header-text-2 {
+    display: flex;
+    font-size: 13px;
+    margin-block-end: 5px;
+  }
+  
+  .login-form input {
+    display: flex;
+    inline-size: 315px;
+    margin-block-start: 5px;
+    margin-block-end: 30px;
+    padding: 6px;
+    font-size: 13px;
+    border: 1px solid #c1c1c1;
+    border-radius: 6px;
+    block-size: 26px;
+  }
+  
+  .login-form button {
+    inline-size: 100%;
+    block-size: 35.5px;
+    padding: 10px;
+    background-color: #000000;
+    color: #fff;
+    border: 1px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .login-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .disabledButton {
+    pointer-events: none; /* Disable pointer events */
+    opacity: 0.5; /* Reduce opacity to indicate disabled state */
+  }
+  
+  .login-link-container {
+    display: flex;
+    inline-size: 100%;
+    justify-content: center;
+  }
+  
+  .login-link {
+    display: flex;
+    inline-size: 220px;
+    justify-content: space-around;
+    margin-block-start: 20px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .password-container {
+    display: flex;
+    position: relative;
+  }
+
+  .password-container input {
+    flex: 1;
+  }
+  
+  .show-password-button {
+    position: absolute;
+    inset-block-start: 18px;
+    inset-inline-end: 25px;
+    inline-size: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+  }
+  
+  

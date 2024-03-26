@@ -1,36 +1,46 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-"use client"
+/* eslint-disable @typescript-eslint/no-floating-promises */
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import type Category from '../interfaces/category.interface';
 
+import 'dotenv/config';
+
 const DashboardPage: React.FC = () => {
+  const router = useRouter();
   const [categories, setCategories] = useState<Category[]>([]);
   const [error, setError] = useState<string>('');
 
   useEffect(() => {
+    const token = localStorage.getItem('jwtToken');
+
+    // Check if the token is present in local storage
+    if (!token) {
+      // If token is not present, redirect to the login page
+      router.push('/login');
+      return;
+    }
+
     const fetchData = async () => {
       try {
-        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhbmlzaW1hQGdtYWlsLmNvIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3MTEyNzMzMTcsImV4cCI6MTcxMTMxNjUxN30.m8_3KOQUktg4vc0ERvApwk8zbx0BBLxCcy4eNroHkb4'
-        const response = await fetch('http://localhost:3333/categories/', {
-            headers: {
-                Authorization: `Bearer ${token}`,
-              },
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/categories/`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         });
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
-        const result: any = await response.json();
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
+        const result: { categories: Category[] } = await response.json();
         setCategories(result?.categories);
       } catch (error) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         setError(error.message);
       }
     };
 
     fetchData();
-  }, []);
+  }, [router]);
 
   return (
     <div>

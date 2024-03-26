@@ -1,0 +1,78 @@
+/* ./src/styles/signup.module.css */
+.signup-container {
+  justify-content: center;
+  align-items: center;
+  block-size: 100vh;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  inline-size: 360px;
+  block-size: 450px;
+  padding: 15px;
+  padding-block-start: 30px;
+  border: 1px solid #C1C1C1;
+  border-radius: 20px;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.signup-header-container {
+  display: flex;
+  inline-size: 315px;
+  margin-block-end: 20px;
+  justify-content: center;
+}
+
+.signup-header-text {
+  display: flex;
+  font-size: 25px;
+}
+
+.signup-form input {
+  display: flex;
+  inline-size: 315px;
+  margin-block-start: 5px;
+  margin-block-end: 30px;
+  padding: 6px;
+  font-size: 13px;
+  border: 1px solid #c1c1c1;
+  border-radius: 6px;
+  block-size: 26px;
+}
+
+.signup-form button {
+  inline-size: 100%;
+  block-size: 35.5px;
+  padding: 10px;
+  background-color: #000000;
+  color: #fff;
+  border: 1px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.signup-form button:hover {
+  background-color: #0056b3;
+}
+
+.disabledButton {
+  pointer-events: none; /* Disable pointer events */
+  opacity: 0.5; /* Reduce opacity to indicate disabled state */
+}
+
+.login-link-container {
+  display: flex;
+  inline-size: 100%;
+  justify-content: center;
+}
+
+.login-link {
+  display: flex;
+  inline-size: 180px;
+  justify-content: space-around;
+  margin-block-start: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}

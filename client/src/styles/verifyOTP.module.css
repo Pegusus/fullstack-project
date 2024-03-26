@@ -1,0 +1,52 @@
+.verifyOTP-container {
+    display: flex;
+    justify-content: center;
+    inline-size: 500px;
+    block-size: 300px;
+    font-family: 'Inter', sans-serif;
+}
+
+.verifyOTP-block {
+    display: flex;
+    inline-size: 450px;
+    block-size: 250px;
+    border: 1px solid #C1C1C1;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.verify-email-header {
+    font-size: 25px;
+    margin-block-end: 20px;
+}
+
+.verify-email-text {
+    font-size: 13px;
+    margin-block-end: 20px;
+}
+
+.disabledButton {
+    pointer-events: none; /* Disable pointer events */
+    opacity: 0.5; /* Reduce opacity to indicate disabled state */
+    inline-size: 330px;
+    block-size: 40px;
+    padding: 10px;
+    background-color: #000000;
+    color: #fff;
+    border: 1px;
+    border-radius: 6px;
+  }
+
+.verifyBtn {
+    inline-size: 330px;
+    block-size: 40px;
+    padding: 10px;
+    background-color: #000000;
+    color: #fff;
+    border: 1px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
