@@ -1,0 +1,58 @@
+.dashboard-container {
+    justify-content: center;
+    align-items: center;
+    block-size: 100vh;
+  }
+
+  .dashboard-box {
+    display: flex;
+    flex-direction: column;
+    inline-size: 400px;
+    block-size: 450px;
+    padding: 15px;
+    padding-block-start: 30px;
+    border: 1px solid #C1C1C1;
+    border-radius: 20px;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .dashboard-header-text {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .dashboard-header-text-1 {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .dashboard-box-content {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 300px;
+  }
+
+  .dashboard-footer {
+    display: flex;
+    width: 90%;
+  }
+
+  .category-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Adjust the value as needed */
+    font-size: 14px;
+  }
+
+  .category-item input {
+    margin-right: 10px; /* Adjust the value as needed */
+    font-size: 14px;
+    width: 20px;
+    height: 30px;
+  }
+  
+  .category-item input[type="checkbox"]:checked + label::before {
+    background-color: #000; /* Black background when checked */
+  }

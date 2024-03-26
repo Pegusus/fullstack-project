@@ -7,7 +7,7 @@ import styles from '../styles/login.module.css';
 
 import 'dotenv/config';
 
-const Login = ({ openSignUpPage }) => {
+const Login = ({ openSignUpPage, openDashboardPage }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -16,27 +16,26 @@ const Login = ({ openSignUpPage }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
 
     try {
       const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
-      console.log('cliked');
       const response = await axios.post(`${BASE_URL}/auth/login`, {
         email: email,
         password: password,
-      }, {
-        headers: {
-          'Cookie': `_vercel_jwt=${process.env.NEXT_PUBLIC_VERCEL_TOKEN}`
-        }
       });
 
       if (response.status === 201) {
         localStorage.setItem('jwtToken', response.data.token);
+        openDashboardPage();
       } else {
         setError('Login failed: Invalid credentials');
       }
     } catch (error) {
       console.error('Error occurred while logging in:', error);
       setError('Error occurred while logging in. Please try again.');
+    }finally {
+      setLoading(false);
     }
   };
 

@@ -102,11 +102,11 @@ export default function Home() {
 
       <main className={styles.main}>
         {/* Conditionally render based on JWT token presence */}
-        {jwtToken ? (
+        {jwtToken || currentPage === 'Dashboard'? (
           <Dashboard />
         ) : (
           currentPage === 'Login' ? (
-            <Login openSignUpPage={() => setCurrentPage('SignUp')} />
+            <Login openSignUpPage={() => setCurrentPage('SignUp')} openDashboardPage={handleOpenDashboardPage}/>
           ) : (
             <SignUp openOTPPage={handleOpenOTPPage} openLoginPage={() => setCurrentPage('Login')}/>
           )
