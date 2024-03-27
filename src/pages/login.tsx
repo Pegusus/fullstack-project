@@ -7,14 +7,19 @@ import styles from '../styles/login.module.css';
 
 import 'dotenv/config';
 
-const Login = ({ openSignUpPage, openDashboardPage }) => {
+interface LoginProps {
+  openSignUpPage: () => void;
+  openDashboardPage: () => void;
+}
+
+const Login: React.FC<LoginProps> = ({ openSignUpPage, openDashboardPage }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: { preventDefault: () => void; }) => {
     event.preventDefault();
     setLoading(true);
 

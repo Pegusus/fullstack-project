@@ -7,7 +7,11 @@ import { useState } from 'react';
 import styles from '../styles/signup.module.css';
 import VerifyOTP from '../pages/verifyOTP'; // Import the VerifyOTP component
 
-const SignUp = ({ openOTPPage, openLoginPage }) => {
+interface SignupProps {
+  openLoginPage: () => void;
+  openOTPPage: () => void;
+}
+const SignUp: React.FC<SignupProps> = ({ openOTPPage, openLoginPage }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,7 +19,7 @@ const SignUp = ({ openOTPPage, openLoginPage }) => {
   const [successMessage, setSuccessMessage] = useState('');
   const [loading, setLoading] = useState(false); // State to control loading state
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     try {
       setLoading(true); // Set loading state to true
